@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f7e7cc">
+<title>Ukulele-Lernstudio · Musik Sachsen-Anhalt</title>
+<style>
+:root{--bg:#101827;--panel:#1d293b;--line:#34445b;--text:#f5f7fc;--sub:#c8d3e2;--accent:#ffbd69;--green:#79e0bc}*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#111b2d,#0d1522);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}header{padding:18px clamp(16px,4vw,50px);border-bottom:1px solid var(--line);background:#131e30}header h1{margin:0;font-size:clamp(24px,3vw,36px)}header p{margin:3px 0 0;color:var(--sub)}nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}button,select{font:inherit}button{cursor:pointer;border:1px solid #56677f;border-radius:12px;background:#2a3a51;color:#fff;padding:10px 15px;font-weight:650}button:hover{background:#3c506b}button:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}button.primary,button.active{background:var(--accent);border-color:var(--accent);color:#1b2029}button.play{background:#246654;border-color:#399178}button.play:hover{background:#32846d}.wrap{max-width:1200px;margin:auto;padding:24px clamp(14px,3vw,30px) 65px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 22px}.toolbar label{font-weight:650}select{background:#24334a;color:white;border:1px solid #63738c;border-radius:10px;padding:10px}.status{padding:10px 13px;background:#263a4e;border-left:4px solid var(--green);border-radius:9px;color:#eaf7f1}.hero{padding:28px 32px;background:linear-gradient(110deg,#253c55,#263147);border:1px solid #486077;border-radius:22px;margin:0 0 22px}.hero h2{font-size:clamp(25px,3.8vw,42px);margin:0 0 8px}.hero p{font-size:18px;max-width:810px;color:#e1eaf4}.section{display:none}.section.active{display:block}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:19px;padding:22px;min-width:0}.card h3{font-size:22px;margin:0 0 9px}.card p,.card li{color:var(--sub)}.card ul{padding-left:23px}.card .big{font-size:24px;font-weight:750;color:var(--accent)}.tip{padding:12px 14px;border-radius:11px;background:#2e4052;color:#f4f8ff;margin:15px 0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chord{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px}.chord svg{width:min(100%,255px);height:auto;overflow:visible}.chord text{font-family:system-ui,sans-serif}.finger{fill:var(--accent);stroke:#121926;stroke-width:1.3}.fingertext{font-size:14px;font-weight:850;fill:#17202e;text-anchor:middle;dominant-baseline:central}.strings{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:17px}.strings button{font-size:23px;padding:18px 4px;background:#314c62}.strings small{display:block;font-size:12px;color:#e2eaf3}.pattern{font-size:clamp(26px,4vw,43px);font-weight:800;letter-spacing:6px;color:#ffcd8a}.footerbuttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:19px}.feedback{min-height:26px;color:var(--green);font-weight:750;margin-top:12px}.quizbuttons{display:flex;gap:10px;flex-wrap:wrap}.quizbuttons button{font-size:18px;min-width:74px}.muted{color:var(--sub)}.lesson{display:none}.lesson.active{display:block}.slidefooter{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:20px;flex-wrap:wrap}.slidecount{color:var(--sub)}.detail{background:#142b2c;border-left:4px solid #73d6bc;padding:13px 17px;border-radius:10px;margin:14px 0} .songchips{display:flex;gap:10px;flex-wrap:wrap}.songchips span{padding:10px 15px;border-radius:10px;background:#33465c;color:#ffdc9e;font-weight:800}.note{font-size:13px;color:#b7c8d8}hr{border:0;border-top:1px solid #475870;margin:20px 0}@media(max-width:650px){.hero{padding:20px}.wrap{padding-top:15px}.card{padding:18px}.strings{gap:5px}.strings button{font-size:19px}}
+
+/* Smartphone first: readable learning slides, thumb-friendly buttons, smooth tab navigation */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{overflow-x:hidden}
+button,select,input{touch-action:manipulation}
+button,select{min-height:46px}
+button{white-space:normal;overflow-wrap:anywhere}
+button:focus-visible,select:focus-visible,input:focus-visible{outline-offset:3px}
+img,svg{max-width:100%}
+@media(max-width:700px){
+ header{padding:12px 12px 0!important}
+ header h1,.brand h1{font-size:clamp(23px,6vw,31px)!important}
+ header p,.brand p{font-size:12px!important;line-height:1.4}
+ nav{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;gap:7px!important;padding:10px 3px 12px;margin-top:8px!important;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+ nav button{flex:0 0 auto;scroll-snap-align:start;min-height:48px;padding:10px 13px;font-size:14px;white-space:nowrap}
+ .wrap{padding:14px max(12px,env(safe-area-inset-right)) calc(85px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))!important;width:100%;max-width:100%}
+ .toolbar{align-items:stretch;gap:9px!important}
+ .toolbar select{max-width:100%;flex:1 1 190px}
+ .toolbar label{align-self:center}
+ .toolbar .status{flex:1 1 100%;font-size:13px}
+ .hero,.intro{padding:17px!important;border-radius:16px!important;margin-bottom:14px!important}
+ .hero h2,.intro h2{font-size:clamp(24px,7vw,33px)!important;line-height:1.15}
+ .hero p,.intro p{font-size:16px!important;line-height:1.5}
+ .card,.panel{padding:15px!important;border-radius:16px!important}
+ .grid{grid-template-columns:minmax(0,1fr)!important;gap:13px!important}
+ .actions,.footerbuttons{gap:8px!important}
+ .actions button,.footerbuttons button{min-height:48px}
+ .slidefooter,.lessonfoot{gap:8px!important;display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center}
+ .slidefooter button,.lessonfoot button{min-height:49px;padding:8px 9px;font-size:14px}
+ .slidecount,#slideNumber{font-size:12px;text-align:center}
+ .quizbuttons,.answers{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important}
+ .quizbuttons button,.answers button{min-height:52px;margin:0;min-width:0!important}
+ input[type=range]{min-height:42px;max-width:100%;accent-color:var(--terra,var(--accent,#a65d3c))}
+}
+@media(max-width:380px){header h1,.brand h1{font-size:22px!important}.hero h2,.intro h2{font-size:25px!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+@media(max-width:700px){
+ .hero-ukulele{width:75px!important;height:auto!important;float:right;margin:0 0 5px 9px}
+ .board{grid-template-columns:minmax(0,1fr)!important;gap:10px!important;padding:18px 14px!important;min-height:0!important}
+ .board h2{font-size:clamp(29px,8vw,42px)!important;line-height:1.12}
+ .board-line{font-size:clamp(21px,6vw,30px)!important;line-height:1.38!important;overflow-wrap:anywhere}
+ .board-kicker{font-size:12px!important}
+ .board-art{padding:5px!important;min-height:0!important}
+ .board-art .chord svg{width:190px!important;max-height:250px}
+ .board-hint{font-size:16px!important}
+ .songpanel{padding:16px!important}
+ .song-chords{gap:7px!important;flex-wrap:wrap}
+ .song-chords span{font-size:22px!important;min-width:46px;text-align:center}
+ .memory-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .memory-tile{min-height:128px!important}
+ .memory-tile .front svg{height:116px!important;max-width:100%}
+ .memory-stats{gap:9px!important}
+ .memory-stats button{min-height:48px}
+ .strings{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px}
+ .strings button{min-height:67px}
+ .pattern{font-size:clamp(26px,8vw,36px);letter-spacing:2px;white-space:normal}
+}
+</style>
+<style>
+:root{--bg:#f6e7d0;--panel:#fff8ec;--line:#dfc5a4;--text:#3b2920;--sub:#645248;--accent:#b95b30;--green:#237457}
+body{background:radial-gradient(circle at 90% 8%,#ffdb9c 0,transparent 35%),linear-gradient(135deg,#fff2da,#e9bd92);color:var(--text)}
+header{background:#fff0d8ee;border-color:#d3ac82}header p{color:#6d5645}
+button{background:#ead4b9;color:#422d22;border-color:#bb966f}button:hover{background:#ddbd98}button.primary,button.active{background:#b95b30;color:white;border-color:#b95b30}button.play{background:#27725b;color:#fff;border-color:#27725b}button.play:hover{background:#1e5a48}
+select{background:#fffaf0;color:#422d22;border-color:#c5a078}
+.status{background:#fff8ed;color:#35614b}.hero{background:linear-gradient(110deg,#fae0b5,#f7c99a);border-color:#dcab7c}.hero p,.card p,.card li{color:var(--sub)}.card{box-shadow:0 6px 22px #73451e16}.tip{background:#f8e4c9;color:#4c3628}.detail{background:#e8f2e7;color:#254c3b}.songchips span{background:#f4d3aa;color:#56331f}.note,.muted,.slidecount{color:#715d4d}.strings button{background:#eed0a3;color:#493122}.strings small{color:#725038}.pattern{color:#a34a27}.feedback{color:#237457}.chord svg{background:#fff6e7;border:1px solid #ebd4b6;border-radius:14px;padding:8px}.chord .finger{fill:#d96f3f}.chord .fingertext{fill:#fff}
+.hero-ukulele{width:min(225px,35vw);height:auto;float:right;margin:-7px 0 3px 15px;filter:drop-shadow(3px 9px 8px #7c4c2544)}
+.memory-layout{margin-top:18px}.memory-stats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:14px;font-weight:750}.memory-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.memory-tile{min-height:156px;display:flex;justify-content:center;align-items:center;padding:8px;background:linear-gradient(145deg,#b45f3d,#803c2f);border:2px solid #8f4834;color:#fff;position:relative;perspective:600px;transition:transform .15s}.memory-tile:hover{transform:translateY(-3px);background:#a95234}.memory-tile.revealed{background:#fff8e9;color:#483024;border-color:#c99b68}.memory-tile.matched{background:#dfefdf;color:#2e513b;border-color:#63966a;cursor:default}.memory-tile .back{font-size:55px}.memory-tile .front{display:none;width:100%;text-align:center}.memory-tile.revealed .back,.memory-tile.matched .back{display:none}.memory-tile.revealed .front,.memory-tile.matched .front{display:block}.memory-tile .front svg{display:block;width:100%;height:132px}.memory-tile .front .name{font-size:clamp(20px,2.8vw,32px);font-weight:850}.memory-tile .front .subname{font-size:13px}.memory-feedback{font-weight:750;min-height:29px;color:#285f45;margin-top:12px}
+@media(max-width:620px){.memory-board{gap:6px}.memory-tile{min-height:115px;padding:3px}.memory-tile .front svg{height:103px}.memory-tile .back{font-size:34px}.hero-ukulele{width:112px}}
+
+/* Großformatige Tafelbilder für Beamer / interaktive Tafel */
+.board{min-height:440px;display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.85fr);align-items:center;gap:24px;background:#fff8e9;border:3px solid #cfab81;border-radius:20px;padding:clamp(20px,3vw,40px);box-shadow:0 8px 0 #e2c6a2}
+.board .board-kicker{font-size:clamp(14px,1.7vw,21px);font-weight:850;letter-spacing:.12em;color:#9f5334}
+.board h2{font-size:clamp(38px,5.2vw,70px);line-height:1.09;margin:16px 0 22px;color:#452b20}
+.board .board-line{font-size:clamp(23px,2.85vw,38px);line-height:1.3;font-weight:750;color:#563c2c;margin:12px 0}
+.board .board-line strong{color:#b34c31}
+.board .board-hint{font-size:clamp(17px,1.9vw,24px);color:#6f4d3c;margin-top:24px}
+.board-art{text-align:center;max-width:100%;display:grid;justify-items:center;gap:12px}
+.board-art .chord svg{width:min(100%,290px)}
+.board-art .big-symbol{font-size:clamp(66px,10vw,145px);line-height:1.1}
+.board-art .string-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.board-art .string-pills span{font-size:clamp(26px,3vw,44px);font-weight:850;padding:8px 15px;background:#f3d6a6;border-radius:14px;color:#6b392b}
+.songpanel{border:2px solid #dfb77b;background:#fff0d7;border-radius:18px;padding:20px;margin-top:20px}
+.songpanel h3{font-size:clamp(25px,3vw,37px);margin:0 0 10px;color:#6a3a24}
+.songpanel p{font-size:clamp(17px,2vw,23px);margin:8px 0;color:#5b4132}
+.song-chords{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.song-chords span{background:#a94f36;color:white;border-radius:12px;padding:8px 15px;font-size:clamp(24px,3vw,36px);font-weight:850}
+.taskline{font-size:clamp(19px,2.15vw,27px);font-weight:750;margin:18px 0;color:#59412e}
+@media(max-width:760px){.board{grid-template-columns:1fr;min-height:0}.board-art .chord svg{width:210px}}
+@media print{header,.toolbar,.slidefooter,.songpanel button{display:none!important}.board{box-shadow:none;break-inside:avoid}.songpanel{break-inside:avoid}body{background:white}}
+</style></head><body>
+<header><h1>🎵 Ukulele-Lernstudio</h1><p>Musik · Sekundarschule Klassen 5–10 & Gymnasium Klassen 5–12 · Sachsen-Anhalt</p><nav aria-label="Bereiche"><button data-tab="lernen" class="active">📚 Tafelbilder</button><button data-tab="akkorde">🎸 Akkorde & Klang</button><button data-tab="rhythmus">🥁 Rhythmus</button><button data-tab="spiele">🎮 Lernspiele</button><button data-tab="memory">🃏 Akkord-Memory</button></nav></header>
+<main class="wrap">
+<div class="toolbar"><label for="level">Lernstufe:</label><select id="level"><option value="A">Klassen 5/6 · Einstieg</option><option value="B">Klassen 7/8 · Begleitung</option><option value="C">Klassen 9/10 · Gestaltung</option><option value="D">Klassen 11/12 · Analyse</option></select><button id="audioTest" class="play">🔊 Audiotest</button><span id="audioStatus" class="status" role="status" aria-live="polite">Bereit – Ton durch Klick starten</span></div>
+<section class="section active" id="lernen"><div class="hero"><svg class="hero-ukulele" viewBox="0 0 180 240" role="img" aria-label="Illustration einer Ukulele"><g transform="rotate(-23 90 120)"><path d="M77 11h26v93H77z" fill="#88502e"/><path d="M80 12V1M100 12V1" stroke="#4a2c20" stroke-width="5"/><path d="M73 31h34v64H73z" fill="#bb8550"/><path d="M75 90Q40 78 28 116Q18 143 48 160Q14 190 42 216Q89 246 135 216Q164 191 132 160Q163 134 149 110Q129 77 105 90Z" fill="#c97a42" stroke="#7b4326" stroke-width="5"/><ellipse cx="90" cy="166" rx="21" ry="23" fill="#4c2b21" stroke="#f5c685" stroke-width="5"/><path d="M78 13v198M86 13v198M94 13v198M102 13v198" stroke="#f4e5c4" stroke-width="1"/><path d="M74 52h32M74 66h32M74 80h32" stroke="#70462d" stroke-width="3"/><path d="M70 201h40" stroke="#613a25" stroke-width="9"/><circle cx="72" cy="18" r="5" fill="#e0bc78"/><circle cx="108" cy="18" r="5" fill="#e0bc78"/></g><path d="M151 34l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#bd663e"/></svg><h2>Deine Ukulele-Reise</h2><p>Entdecke die Saiten, greife deine ersten Akkorde und begleite bekannte Lieder – Schritt für Schritt.</p></div><article class="card"><div id="lessonMount"></div><div class="slidefooter"><button id="prevLesson">◀ Zurück</button><span id="lessonCounter" class="slidecount"></span><button id="nextLesson" class="primary">Weiter ▶</button></div></article></section>
+<section class="section" id="akkorde"><div class="hero"><h2>Vier Akkorde – richtig greifen und hören</h2><p>Die Diagramme zeigen die Saiten von links nach rechts: G – C – E – A. Eine Zahl im Punkt bezeichnet den Finger. Kreis = offene Saite.</p></div><div id="chordGrid" class="grid"></div></section>
+<section class="section" id="rhythmus"><div class="hero"><h2>Rhythmus-Werkstatt</h2><p>Spiele mit dem Grundpuls und begleite eine einfache Akkordfolge. Der Klang entsteht direkt in deinem Browser, ohne Downloads oder Internet.</p></div><div class="grid"><article class="card"><h3>1. Gleichmäßiger Puls</h3><p>Zähle laut <strong>1 – 2 – 3 – 4</strong>. Jeder Klick des Metronoms ist ein Schlag.</p><label for="tempo">Tempo: <strong id="tempoValue">80</strong> BPM</label><input id="tempo" type="range" min="50" max="140" value="80" style="display:block;width:100%;margin:16px 0"><div class="actions"><button class="play" id="metronome">▶ Metronom starten</button><button id="stopAudio">■ Ton stoppen</button></div></article><article class="card"><h3>2. Das Pop-Schlagmuster</h3><div class="pattern">↓ ↓ ↑ ↑ ↓ ↑</div><p>Ein Beispiel im 4/4-Takt: Abwärts auf 1 und 2, aufwärts auf 2-und, aufwärts auf 3-und, abwärts auf 4, aufwärts auf 4-und. Auf Zählzeit 3 kein Saitenkontakt.</p><button class="play" id="rhythmPlay">🔊 Muster anhören</button><div class="tip">Aufgabenfolge: Erst mitklatschen, dann auf gedämpften Saiten spielen, danach C-Dur greifen.</div></article><article class="card"><h3>3. Akkordwechsel</h3><div class="songchips"><span>C</span><span>Am</span><span>F</span><span>G7</span></div><p>Jeden Akkord vier Schläge lang halten. Wiederhole die Folge und versuche gleichmäßig zu wechseln.</p><button class="play" id="progressionPlay">🎶 Akkordfolge hören</button><p class="note">Angezupfte Saiten als physikalisch angenäherter Ukulele-Klang (keine Tonaufnahmen).</p></article></div></section>
+<section class="section" id="spiele"><div class="hero"><h2>Hören, zuordnen, wiedererkennen</h2><p>Kurze Lernspiele mit unmittelbarer Rückmeldung. Höre genau hin und entscheide selbst!</p></div><div class="grid"><article class="card"><h3>Spiel 1 · Saiten-Profi</h3><p>Welche Saite erklingt? Klicke erst auf „Ton hören“ und wähle dann G, C, E oder A.</p><button id="newString" class="play">🔊 Ton hören / neue Aufgabe</button><div class="quizbuttons" id="stringAnswers"></div><div class="feedback" id="stringFeedback" aria-live="polite"></div></article><article class="card"><h3>Spiel 2 · Dur oder Moll?</h3><p>Höre den Unterschied zwischen C-Dur und a-Moll. Beide Klangbeispiele nutzen die echte Ukulele-Stimmung.</p><button id="newMood" class="play">🔊 Akkord hören / neue Aufgabe</button><div class="quizbuttons"><button data-mood="Dur">Dur</button><button data-mood="Moll">Moll</button></div><div class="feedback" id="moodFeedback" aria-live="polite"></div><p class="note">Dur und Moll klingen nicht grundsätzlich „fröhlich“ und „traurig“; das ist nur eine erste Hörhilfe.</p></article><article class="card"><h3>Spiel 3 · Akkord-Detektiv</h3><p>Welcher Griff ist zu hören? Es kommen die Akkorde C, Am, F und G7 vor.</p><button id="newChord" class="play">🔊 Akkord hören / neue Aufgabe</button><div class="quizbuttons" id="chordAnswers"></div><div class="feedback" id="chordFeedback" aria-live="polite"></div></article></div></section>
+<section class="section" id="memory"><div class="hero"><h2>🃏 Akkord-Memory</h2><p>Finde jeweils den Akkordnamen und das dazugehörige Griffbild. Klicke zwei Karten an, vergleiche sie und merke dir ihre Positionen. Die Griffbilder zeigen die Saiten von links nach rechts: G–C–E–A.</p></div><article class="card memory-layout"><div class="memory-stats"><span>Gefundene Paare: <span id="memoryPairs">0</span> / 4</span><span>Versuche: <span id="memoryTurns">0</span></span><button id="memoryReset" class="primary">↻ Neu mischen</button><button id="memorySound" class="play">🔊 Gefundenen Akkord hören</button></div><div class="memory-board" id="memoryBoard" aria-label="Akkord-Memory, acht verdeckte Karten"></div><div class="memory-feedback" id="memoryFeedback" role="status" aria-live="polite">Decke zwei Karten auf.</div></article></section></main>
+<script>
+'use strict';
+/* Correct high-G tuning, strings ordered G4, C4, E4, A4 (left to right). */
+const BASE=[392,261.625565,329.627557,440];
+const CHORDS={
+ C:{name:'C-Dur', frets:[0,0,0,3],fingers:[0,0,0,3],info:'Ringfinger: A-Saite, 3. Bund.'},
+ Am:{name:'a-Moll',frets:[2,0,0,0],fingers:[2,0,0,0],info:'Mittelfinger: G-Saite, 2. Bund.'},
+ F:{name:'F-Dur',frets:[2,0,1,0],fingers:[2,0,1,0],info:'Mittelfinger: G-Saite, 2. Bund; Zeigefinger: E-Saite, 1. Bund.'},
+ G7:{name:'G7',frets:[0,2,1,2],fingers:[0,2,1,3],info:'Zeigefinger: E-Saite, 1. Bund; Mittel- und Ringfinger: C- und A-Saite, 2. Bund.'}
+};
+const $=id=>document.getElementById(id);let audio=null;let activeNodes=[];let metronomeTimer=null;let metronomeOn=false;
+function setStatus(s){$('audioStatus').textContent=s}
+async function soundContext(){
+ const C=window.AudioContext||window.webkitAudioContext;
+ if(!C){setStatus('⚠ Dein Browser unterstützt Web Audio nicht.');throw Error('No AudioContext')}
+ if(!audio)audio=new C();
+ if(audio.state!=='running')await audio.resume();
+ if(audio.state!=='running'){setStatus('⚠ Ton blockiert. Browser-Tonfreigabe prüfen.');throw Error('Audio suspended')}
+ return audio;
+}
+function stopAudio(){if(metronomeTimer!==null){clearInterval(metronomeTimer);metronomeTimer=null}metronomeOn=false;$('metronome').textContent='▶ Metronom starten';if(audio){for(const item of activeNodes){try{item.stop()}catch(e){}}}activeNodes=[];setStatus('Ton gestoppt')}
+/* Karplus-Strong: physical-model-inspired plucked nylon string, no samples/network. */
+function pluck(ac,freq,when,volume=.16,duration=1.3){
+ const sr=ac.sampleRate, n=Math.max(2,Math.round(sr/freq)), count=Math.ceil(duration*sr), buf=ac.createBuffer(1,count,sr), data=buf.getChannelData(0);
+ let delay=new Float32Array(n);for(let i=0;i<n;i++)delay[i]=(Math.random()*2-1)*(.9-.25*i/n);
+ let pos=0,lp=0;const decay=.994;for(let i=0;i<count;i++){
+  const a=delay[pos],b=delay[(pos+1)%n];lp=(a+b)*.5*decay;delay[pos]=lp;pos=(pos+1)%n;
+  const attack=Math.min(1,i/(sr*.002));const fade=Math.min(1,(count-i)/(sr*.045));data[i]=a*attack*fade;
+ }
+ const src=ac.createBufferSource(),filter=ac.createBiquadFilter(),gain=ac.createGain();src.buffer=buf;filter.type='lowpass';filter.frequency.value=3500;filter.Q.value=.55;gain.gain.value=Math.min(.55,volume*1.5);src.connect(filter);filter.connect(gain);gain.connect(ac.destination);src.start(when);src.stop(when+duration+.004);activeNodes.push(src);src.onended=()=>{activeNodes=activeNodes.filter(x=>x!==src)};
+}
+function chordAt(ac,key,when,vol=.15){const x=CHORDS[key];x.frets.forEach((f,i)=>pluck(ac,BASE[i]*2**(f/12),when+i*.048,vol,.95))}
+async function playString(i){try{const ac=await soundContext();pluck(ac,BASE[i],ac.currentTime+.015,.25,1.4);setStatus('♪ Saite '+['G','C','E','A'][i]+' spielt')}catch(e){console.error(e)}}
+async function playChord(key,count=1){try{const ac=await soundContext();for(let i=0;i<count;i++)chordAt(ac,key,ac.currentTime+.025+i*.78);setStatus('♪ '+CHORDS[key].name+' erklingt')}catch(e){console.error(e)}}
+async function playSequence(keys,beats=4){try{const ac=await soundContext(),unit=60/Number($('tempo').value);keys.forEach((k,i)=>chordAt(ac,k,ac.currentTime+.04+i*beats*unit,.14));setStatus('♪ Akkordfolge wird gespielt')}catch(e){console.error(e)}}
+function diagram(key){const c=CHORDS[key];let s='<svg viewBox="0 0 245 292" role="img" aria-label="Griffdiagramm '+c.name+' von links G C E A">';const left=52,right=204,top=51,gap=(right-left)/3,step=49;
+ for(let i=0;i<4;i++){let x=left+i*gap;s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${top+4*step}" stroke="#75533b" stroke-width="2.2"/>`;s+=`<text x="${x}" y="23" text-anchor="middle" fill="#513727" font-size="18" font-weight="750">${'GCEA'[i]}</text>`}
+ for(let i=0;i<=4;i++)s+=`<line x1="${left}" y1="${top+i*step}" x2="${right}" y2="${top+i*step}" stroke="#75533b" stroke-width="${i===0?6:2}"/>`;
+ for(let i=1;i<=4;i++)s+=`<text x="30" y="${top+(i-.5)*step+6}" text-anchor="middle" fill="#73523a" font-size="15">${i}</text>`;
+ c.frets.forEach((f,i)=>{const x=left+i*gap;if(f===0)s+=`<circle cx="${x}" cy="38" r="6.4" fill="none" stroke="#237457" stroke-width="2.5"/>`;else{const y=top+(f-.5)*step;s+=`<circle class="finger" cx="${x}" cy="${y}" r="15"/><text class="fingertext" x="${x}" y="${y}">${c.fingers[i]}</text>`}});return s+'</svg>'}
+function initChords(){Object.entries(CHORDS).forEach(([key,c])=>{const el=document.createElement('article');el.className='card';el.innerHTML=`<h3>${c.name}</h3><div class="chord">${diagram(key)}</div><p>${c.info}</p><div class="actions"><button class="play" data-chord="${key}">🔊 Anhören</button><button data-repeat="${key}">🎶 4× anschlagen</button></div>`;$('chordGrid').append(el)});$('chordGrid').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.chord)playChord(b.dataset.chord);if(b.dataset.repeat)playChord(b.dataset.repeat,4)})}
+const LESSONS={
+ A:[
+ {title:'Hallo, Ukulele!',lines:['<strong>4 Saiten</strong> • ein Instrument','Korpus • Hals • Wirbel'],art:'🎸',task:'Zeige die 4 Saiten an deinem Instrument.'},
+ {title:'Unsere 4 Saiten',lines:['<strong>G – C – E – A</strong>','Gute Clowns essen Ananas!'],art:'strings',task:'Zupfe jede Saite einzeln von G bis A.',song:{name:'Hör-Challenge: Vier-Saiten-Groove',type:'strings',chords:['G','C','E','A'],info:'Ein eigenes kurzes Motiv aus den vier Leersaiten. Damit übst du die Töne, bevor du Akkorde lernst.'}},
+ {title:'Ein Finger reicht!',lines:['<strong>C-Dur</strong>','Ringfinger → A-Saite, Bund 3'],art:'C',task:'Greife C-Dur und schlage alle vier Saiten an.',song:{name:'We Will Rock You – Beat-Challenge',type:'beat',chords:['C'],info:'Bekannter Stampf-Stampf-Klatsch-Rhythmus als Übung; dazu auf C-Dur spielen. Keine Original-Songbegleitung.'}},
+ {title:'Zwei Akkorde',lines:['<strong>C</strong> und <strong>G7</strong>','4 Schläge pro Akkord'],art:'G7',task:'Wechsle langsam zwischen C und G7.',song:{name:'Bruder Jakob',type:'chords',chords:['C','G7','C','G7'],info:'Vereinfachte Begleitung des bekannten Kanons. Jeweils vier Schläge pro Akkord.'}}
+ ],
+ B:[
+ {title:'Vier starke Akkorde',lines:['<strong>C · Am · F · G7</strong>','Erst greifen, dann wechseln.'],art:'F',task:'Wechsle C → Am → F → G7.',song:{name:'Wellerman',type:'chords',chords:['Am','F','C','G7'],info:'Vereinfachte Übungsbegleitung zum traditionellen Shanty; die Harmonisierung ist bewusst angepasst.'}},
+ {title:'Der Pop-Rhythmus',lines:['<strong>↓ ↓ ↑ ↑ ↓ ↑</strong>','Zähle: 1 · 2 + · + 4 +'],art:'🥁',task:'Klatsche das Muster, dann spiele C-Dur.',song:{name:'Wellerman – Rhythmus üben',type:'chords',chords:['Am','F','C','G7'],info:'Spiele die vereinfachte Akkordrunde im gleichmäßigen 4/4-Übungspuls.'}},
+ {title:'Dur oder Moll?',lines:['<strong>C-Dur</strong> ↔ <strong>Am</strong>','Hörst du den Unterschied?'],art:'Am',task:'Höre beide Akkorde und beschreibe ihren Klang.',song:{name:'Bella Ciao',type:'chords',chords:['Am','F','C','G7'],info:'Freie, vereinfachte Unterrichtsbegleitung des traditionellen Liedes; nicht die exakten Originalharmonien.'}}
+ ],
+ C:[
+ {title:'Begleite einen Song',lines:['<strong>Am · F · C · G7</strong>','Jeder Akkord: 4 Schläge'],art:'Am',task:'Spiele die ganze Folge ohne Pause.',song:{name:'Wellerman – Klassenensemble',type:'chords',chords:['Am','F','C','G7'],info:'Vereinfachte Arrangement-Variante: eine Gruppe singt, eine begleitet.'}},
+ {title:'Mach Musik lebendig',lines:['<strong>p</strong> leise · <strong>mf</strong> mittel','<strong>f</strong> laut'],art:'🎶',task:'Spiele dieselbe Folge erst leise, dann laut.',song:{name:'Bella Ciao – Ausdruck',type:'chords',chords:['Am','F','C','G7'],info:'Übungsarrangement: Begleite die Strophe leise und steigere die Dynamik im Refrain.'}},
+ {title:'Dein Arrangement',lines:['<strong>Intro → Strophe → Refrain</strong>','Welche Akkorde passen?'],art:'🎼',task:'Gestalte 8 Takte mit zwei Lautstärken.',song:{name:'Eigener Pop-Song',type:'chords',chords:['C','Am','F','G7'],info:'Originale Übungsfolge: Erfinde eine eigene Melodie und begleite sie.'}}
+ ],
+ D:[
+ {title:'Akkorde verstehen',lines:['<strong>I – V – vi – IV</strong>','C – G – Am – F'],art:'F',task:'Vergleiche die Funktion von Dur- und Mollakkorden.',song:{name:'Vier-Akkorde-Pop – Harmonielabor',type:'chords',chords:['C','G','Am','F'],info:'Poptypische Akkordfolge als eigenes Hör- und Arrangementbeispiel. G-Dur wird hier als zusätzlicher Griff eingeführt.'}},
+ {title:'Form & Wirkung',lines:['<strong>Intro · Strophe · Refrain</strong>','Dynamik schafft Kontraste.'],art:'🎵',task:'Entwickle zwei unterschiedliche Begleitmuster.',song:{name:'Eigene Pop-Hook',type:'chords',chords:['C','Am','F','G7'],info:'Komponiere auf der vorgegebenen Begleitfolge ein eigenes melodisches Motiv.'}},
+ {title:'Bühne frei!',lines:['<strong>1 – 2 – 3 – 4</strong>','Gemeinsam beginnen!'],art:'🎤',task:'Präsentiere 8 Takte und gib konstruktives Feedback.',song:{name:'Mini-Auftritt',type:'chords',chords:['C','Am','F','G7'],info:'Spiele deinen eigenen kurzen Song vor der Lerngruppe.'}}
+ ]};
+let slide=0;
+/* Der zusätzliche G-Dur-Griff wird ausschließlich in der Oberstufe als Erweiterung genutzt. */
+CHORDS.G={name:'G-Dur',frets:[0,2,3,2],fingers:[0,1,3,2],info:'Zeigefinger: C-Saite, 2. Bund; Ringfinger: E-Saite, 3. Bund; Mittelfinger: A-Saite, 2. Bund.'};
+function renderLesson(){
+ const level=$('level').value,ls=LESSONS[level];slide=Math.max(0,Math.min(slide,ls.length-1));const lesson=ls[slide];
+ const art=lesson.art==='strings'?'<div class="string-pills"><span>G</span><span>C</span><span>E</span><span>A</span></div>':CHORDS[lesson.art]?`<div class="chord">${diagram(lesson.art)}<b>${CHORDS[lesson.art].name}</b></div>`:`<div class="big-symbol" aria-hidden="true">${lesson.art}</div>`;
+ const song=lesson.song;
+ $('lessonMount').innerHTML=`<div class="board"><div><div class="board-kicker">MUSIK · KLASSE ${level==='A'?'5/6':level==='B'?'7/8':level==='C'?'9/10':'11/12'} · TAFELBILD ${slide+1}</div><h2>${lesson.title}</h2>${lesson.lines.map(x=>`<div class="board-line">${x}</div>`).join('')}<div class="board-hint">🎯 ${lesson.task}</div></div><div class="board-art">${art}</div></div>${song?`<div class="songpanel"><h3>🎵 Jetzt ein Lied: ${song.name}</h3><p>${song.info}</p><div class="song-chords">${song.chords.map(x=>`<span>${x}</span>`).join('')}</div><div class="actions"><button class="play" id="songPlay">▶ Hörbeispiel starten</button><button id="songSlow">🐢 Langsam spielen</button>${song.type==='strings'?'<button id="songStringAgain">🔊 Saiten einzeln</button>':''}</div><p id="songFeedback" class="note" aria-live="polite">Übe die angezeigte Folge zuerst langsam.</p></div>`:''}<div class="actions"><button id="lessonGo">🎸 Akkord-Griffbilder ansehen</button></div>`;
+ $('lessonCounter').textContent=`Tafelbild ${slide+1} von ${ls.length}`;$('prevLesson').disabled=slide===0;$('nextLesson').disabled=slide===ls.length-1;
+ $('lessonGo').onclick=()=>showTab('akkorde');
+ if(song){$('songPlay').onclick=()=>playSongExercise(song,false);$('songSlow').onclick=()=>playSongExercise(song,true);if($('songStringAgain'))$('songStringAgain').onclick=()=>playSongExercise(song,true)}
+}
+async function playSongExercise(song,slow){
+ try{
+  const ac=await soundContext(),t=ac.currentTime+.08,beat=60/(slow?65:95);
+  if(song.type==='strings'){
+   const melody=[0,1,2,3,2,1,0,1];melody.forEach((idx,i)=>pluck(ac,BASE[idx],t+i*beat*.8,.18,.8));
+  }else if(song.type==='beat'){
+   for(let bar=0;bar<4;bar++){
+    for(let step=0;step<4;step++){
+     let at=t+(bar*4+step)*beat;
+     if(step===0||step===1)clickSound(ac,at,step===0);
+     if(step===2)chordAt(ac,'C',at,.18);
+    }
+   }
+  }else{
+   song.chords.forEach((key,i)=>{
+    for(let b=0;b<4;b++)chordAt(ac,key,t+(i*4+b)*beat,.12);
+   });
+  }
+  const feedback=$('songFeedback');if(feedback)feedback.textContent=slow?'Langsames Übungsbeispiel läuft. Spiele mit!':'Hörbeispiel läuft. Spiele mit!';
+  setStatus('♪ '+song.name+' – Übungsbegleitung gestartet');
+ }catch(e){console.error(e);setStatus('⚠ Hörbeispiel konnte nicht gestartet werden.')}
+}
+function showTab(tab){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===tab));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab))}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));$('level').addEventListener('change',()=>{slide=0;renderLesson()});$('prevLesson').onclick=()=>{slide--;renderLesson()};$('nextLesson').onclick=()=>{slide++;renderLesson()};
+$('audioTest').onclick=async()=>{try{const ac=await soundContext();pluck(ac,440,ac.currentTime+.015,.27,.85);setStatus('✓ Audiotest: A-Ton (440 Hz) wurde gestartet')}catch(e){console.error(e)}};
+$('tempo').oninput=()=>{$('tempoValue').textContent=$('tempo').value;if(metronomeOn){stopAudio();startMetronome()}};
+function clickSound(ac,when,strong=false){const osc=ac.createOscillator(),gain=ac.createGain();osc.type='sine';osc.frequency.value=strong?1050:750;gain.gain.setValueAtTime(.12,when);gain.gain.exponentialRampToValueAtTime(.0001,when+.07);osc.connect(gain);gain.connect(ac.destination);osc.start(when);osc.stop(when+.08);activeNodes.push(osc);osc.onended=()=>activeNodes=activeNodes.filter(x=>x!==osc)}
+let beat=0;async function startMetronome(){try{const ac=await soundContext();metronomeOn=true;beat=0;const tick=()=>{clickSound(ac,ac.currentTime+.008,beat%4===0);beat++};tick();metronomeTimer=setInterval(tick,60000/Number($('tempo').value));$('metronome').textContent='⏸ Metronom stoppen';setStatus('♪ Metronom läuft')}catch(e){console.error(e)}}
+$('metronome').onclick=()=>{metronomeOn?stopAudio():startMetronome()};$('stopAudio').onclick=stopAudio;
+$('rhythmPlay').onclick=async()=>{try{const ac=await soundContext(),unit=60/Number($('tempo').value),t=ac.currentTime+.045;/* eighth-note grid: 1,2,2&,3&,4,4& */[0,2,3,5,6,7].forEach((step,i)=>{let down=[0,2,6].includes(step);CHORDS.C.frets.forEach((f,j)=>pluck(ac,BASE[j]*2**(f/12),t+step*unit/2+j*(down?.035:.018),down?.115:.065,.37))});setStatus('♪ Anschlagmuster erklingt')}catch(e){console.error(e)}};
+$('progressionPlay').onclick=()=>playSequence(['C','Am','F','G7']);
+let targetString=null,targetMood=null,targetChord=null;function choose(x){return x[Math.floor(Math.random()*x.length)]}
+function makeButtons(id,opts,onClick){opts.forEach((x)=>{const b=document.createElement('button');b.textContent=x;b.onclick=()=>onClick(x);$(id).append(b)})}
+makeButtons('stringAnswers',['G','C','E','A'],x=>{$('stringFeedback').textContent=targetString===null?'Bitte zuerst einen Ton anhören.':x===targetString?'✓ Richtig erkannt!':'Noch nicht. Höre erneut und versuche es noch einmal.'});
+$('newString').onclick=()=>{targetString=choose(['G','C','E','A']);$('stringFeedback').textContent='Welche Saite war das?';playString('GCEA'.indexOf(targetString))};
+document.querySelectorAll('[data-mood]').forEach(b=>b.onclick=()=>{$('moodFeedback').textContent=targetMood===null?'Höre zuerst das Beispiel.':b.dataset.mood===targetMood?'✓ Richtig gehört!':'Versuche es nochmal.'});
+$('newMood').onclick=()=>{targetMood=choose(['Dur','Moll']);$('moodFeedback').textContent='Welcher Akkordcharakter?';playChord(targetMood==='Dur'?'C':'Am')};
+makeButtons('chordAnswers',['C','Am','F','G7'],x=>{$('chordFeedback').textContent=targetChord===null?'Höre zuerst das Beispiel.':x===targetChord?'✓ Das stimmt!':'Versuche es erneut.'});
+$('newChord').onclick=()=>{targetChord=choose(Object.keys(CHORDS));$('chordFeedback').textContent='Welcher Griff erklingt?';playChord(targetChord)};
+window.addEventListener('pagehide',stopAudio);
+initChords();renderLesson();
+let memoryDeck=[],memoryOpen=[],memoryPairs=0,memoryTurns=0,memoryBusy=false,lastFound='C',memoryRound=0;
+function newMemory(){memoryRound++;memoryDeck=Object.keys(CHORDS).flatMap(key=>[{key,type:'word',id:key+'-word'},{key,type:'diagram',id:key+'-diagram'}]);for(let i=memoryDeck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[memoryDeck[i],memoryDeck[j]]=[memoryDeck[j],memoryDeck[i]]}memoryOpen=[];memoryPairs=0;memoryTurns=0;memoryBusy=false;$('memoryPairs').textContent='0';$('memoryTurns').textContent='0';$('memoryFeedback').textContent='Decke zwei Karten auf.';drawMemory()}
+function drawMemory(){const el=$('memoryBoard');el.innerHTML='';memoryDeck.forEach((c,i)=>{const b=document.createElement('button');b.className='memory-tile'+(c.revealed?' revealed':'')+(c.matched?' matched':'');b.type='button';b.disabled=!!c.matched;b.setAttribute('aria-label',c.revealed||c.matched?(c.type==='word'?'Akkordname ':'Griffbild ')+CHORDS[c.key].name:'Verdeckte Karte '+(i+1));b.innerHTML='<span class="back" aria-hidden="true">♪</span><span class="front">'+(c.type==='word'?'<span class="name">'+CHORDS[c.key].name+'</span><span class="subname">Akkordname</span>':diagram(c.key))+'</span>';b.addEventListener('click',()=>turnMemory(i));el.append(b)})}
+function turnMemory(index){if(memoryBusy)return;const c=memoryDeck[index];if(c.matched||c.revealed||memoryOpen.length===2)return;c.revealed=true;memoryOpen.push(index);drawMemory();if(memoryOpen.length!==2)return;memoryTurns++;$('memoryTurns').textContent=String(memoryTurns);const [a,b]=memoryOpen.map(i=>memoryDeck[i]);if(a.key===b.key&&a.type!==b.type){a.matched=b.matched=true;memoryPairs++;lastFound=a.key;$('memoryPairs').textContent=String(memoryPairs);memoryOpen=[];$('memoryFeedback').textContent=memoryPairs===4?'🎉 Alle vier Paare gefunden! Super gemacht!':'✓ Richtig! '+CHORDS[a.key].name+' – du kannst ihn anhören.';drawMemory();playChord(a.key)}else{memoryBusy=true;$('memoryFeedback').textContent='Noch kein Paar. Merke dir die Karten!';const round=memoryRound;setTimeout(()=>{if(round!==memoryRound)return;a.revealed=b.revealed=false;memoryOpen=[];memoryBusy=false;drawMemory()},1100)}}
+$('memoryReset').onclick=newMemory;$('memorySound').onclick=()=>playChord(lastFound);newMemory();
+
+</script></body></html>
