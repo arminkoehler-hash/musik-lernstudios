@@ -58,6 +58,12 @@ img,svg{max-width:100%}
  #songNotes{max-height:180px;overflow:auto}
  .keyhelp{font-size:12px!important;gap:5px!important;justify-content:flex-start!important}
 }
+
+/* Einheitlicher, jederzeit erreichbarer Rückweg zur Lernstudio-Auswahl */
+.lernstudio-home-link{position:fixed!important;right:max(14px,env(safe-area-inset-right));bottom:max(15px,env(safe-area-inset-bottom));z-index:2147483000!important;display:inline-flex!important;align-items:center;justify-content:center;gap:8px;padding:13px 19px!important;min-height:48px;border-radius:999px!important;background:#284f45!important;color:#fff!important;border:2px solid #fff8e9!important;box-shadow:0 6px 24px rgba(0,0,0,.26)!important;font:700 15px/1.2 system-ui,-apple-system,Segoe UI,sans-serif!important;text-decoration:none!important;letter-spacing:0!important;white-space:nowrap!important;}
+.lernstudio-home-link:hover,.lernstudio-home-link:focus-visible{background:#376c5e!important;outline:3px solid #edb65f!important;outline-offset:2px!important;}
+body{padding-bottom:max(80px,calc(62px + env(safe-area-inset-bottom)))!important;}
+@media(max-width:600px){.lernstudio-home-link{right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:12px 15px!important;font-size:14px!important;}}
 </style></head><body>
 <header><div class="brand"><div class="piano" aria-hidden="true">🎹</div><div><h1>Keyboard-Lernstudio</h1><p>Musik · Sekundarschule 5–10 und Gymnasium 5–12 · Sachsen-Anhalt</p></div></div><nav aria-label="Bereiche"><button class="active" data-tab="lernen">📚 Tafelbilder</button><button data-tab="tasten">🎹 Tasten & Klänge</button><button data-tab="lieder">🎶 Lieder üben</button><button data-tab="spiele">🎮 Lernspiele</button></nav></header>
 <main class="wrap"><div class="toolbar"><label for="level"><strong>Klassenstufe:</strong></label><select id="level"><option value="A">5/6 · Erste Töne</option><option value="B">7/8 · Melodien & Rhythmus</option><option value="C">9/10 · Akkorde & Begleitung</option><option value="D">11/12 · Gestalten & Analysieren</option></select><button id="audioTest" class="audio">🔊 Audiotest</button><span id="status" class="status" role="status">Ton im Browser per Klick starten</span></div>
@@ -93,4 +99,6 @@ function resetMemory(){let pairs=[];memoryNames.forEach(n=>{pairs.push({name:n,k
 function paintMemory(){$('memory').innerHTML='';deck.forEach((c,i)=>{const b=document.createElement('button');const revealed=flipped.includes(i)||c.done;b.className=revealed?(c.done?'matched':'shown'):'';b.innerHTML=revealed?(c.kind==='word'?'<strong>Ton '+c.name+'</strong>':miniDiagram(c.name)):'?';b.setAttribute('aria-label',revealed?(c.kind==='word'?'Tonname ':'Tastenbild ')+c.name:'Verdeckte Karte '+(i+1));b.disabled=!!c.done;b.onclick=()=>flipMemory(i);$('memory').append(b)})}
 function flipMemory(i){if(lock||deck[i].done||flipped.includes(i)||flipped.length===2)return;flipped.push(i);paintMemory();if(flipped.length===2){moves++;$('moves').textContent=moves+' Versuche';const [a,b]=flipped;const isMatch=deck[a].name===deck[b].name&&deck[a].kind!==deck[b].kind;if(isMatch){deck[a].done=deck[b].done=true;matched++;flipped=[];paintMemory();if(matched===4)$('memoryFeedback').textContent='🎉 Alle vier Paare gefunden!'}else{lock=true;timers.push(setTimeout(()=>{flipped=[];lock=false;paintMemory()},850))}}}
 $('resetMemory').onclick=()=>{stopAll();resetMemory()};renderLesson();renderSong();resetMemory();
-</script></body></html>
+</script>
+<a class="lernstudio-home-link" href="index.html" aria-label="Zurück zur Musik-Lernstudio-Startseite">⌂ &nbsp;Zurück zur Startseite</a>
+</body></html>

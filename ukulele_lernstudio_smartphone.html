@@ -63,6 +63,12 @@ img,svg{max-width:100%}
  .strings button{min-height:67px}
  .pattern{font-size:clamp(26px,8vw,36px);letter-spacing:2px;white-space:normal}
 }
+
+/* Einheitlicher, jederzeit erreichbarer Rückweg zur Lernstudio-Auswahl */
+.lernstudio-home-link{position:fixed!important;right:max(14px,env(safe-area-inset-right));bottom:max(15px,env(safe-area-inset-bottom));z-index:2147483000!important;display:inline-flex!important;align-items:center;justify-content:center;gap:8px;padding:13px 19px!important;min-height:48px;border-radius:999px!important;background:#284f45!important;color:#fff!important;border:2px solid #fff8e9!important;box-shadow:0 6px 24px rgba(0,0,0,.26)!important;font:700 15px/1.2 system-ui,-apple-system,Segoe UI,sans-serif!important;text-decoration:none!important;letter-spacing:0!important;white-space:nowrap!important;}
+.lernstudio-home-link:hover,.lernstudio-home-link:focus-visible{background:#376c5e!important;outline:3px solid #edb65f!important;outline-offset:2px!important;}
+body{padding-bottom:max(80px,calc(62px + env(safe-area-inset-bottom)))!important;}
+@media(max-width:600px){.lernstudio-home-link{right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:12px 15px!important;font-size:14px!important;}}
 </style>
 <style>
 :root{--bg:#f6e7d0;--panel:#fff8ec;--line:#dfc5a4;--text:#3b2920;--sub:#645248;--accent:#b95b30;--green:#237457}
@@ -226,4 +232,6 @@ function drawMemory(){const el=$('memoryBoard');el.innerHTML='';memoryDeck.forEa
 function turnMemory(index){if(memoryBusy)return;const c=memoryDeck[index];if(c.matched||c.revealed||memoryOpen.length===2)return;c.revealed=true;memoryOpen.push(index);drawMemory();if(memoryOpen.length!==2)return;memoryTurns++;$('memoryTurns').textContent=String(memoryTurns);const [a,b]=memoryOpen.map(i=>memoryDeck[i]);if(a.key===b.key&&a.type!==b.type){a.matched=b.matched=true;memoryPairs++;lastFound=a.key;$('memoryPairs').textContent=String(memoryPairs);memoryOpen=[];$('memoryFeedback').textContent=memoryPairs===4?'🎉 Alle vier Paare gefunden! Super gemacht!':'✓ Richtig! '+CHORDS[a.key].name+' – du kannst ihn anhören.';drawMemory();playChord(a.key)}else{memoryBusy=true;$('memoryFeedback').textContent='Noch kein Paar. Merke dir die Karten!';const round=memoryRound;setTimeout(()=>{if(round!==memoryRound)return;a.revealed=b.revealed=false;memoryOpen=[];memoryBusy=false;drawMemory()},1100)}}
 $('memoryReset').onclick=newMemory;$('memorySound').onclick=()=>playChord(lastFound);newMemory();
 
-</script></body></html>
+</script>
+<a class="lernstudio-home-link" href="index.html" aria-label="Zurück zur Musik-Lernstudio-Startseite">⌂ &nbsp;Zurück zur Startseite</a>
+</body></html>
